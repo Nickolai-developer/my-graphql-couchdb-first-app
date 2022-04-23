@@ -1,13 +1,17 @@
 {
     "compilerOptions": {
-        "target": "ES6",
-        "lib": ["DOM", "ES2021"],
+        "target": "ES2022",
+        "lib": ["DOM", "ES2021", "ESNext.AsyncIterable"],
         "module": "CommonJS",
         "allowJs": false,
         "strict": true,
         "moduleResolution": "Node",
         "rootDir": "./src",
         "outDir": "./dist",
-        "sourceMap": true
-    }
+        "strictPropertyInitialization": false,
+        "sourceMap": true,
+        "emitDecoratorMetadata": true,
+        "experimentalDecorators": true
+    },
+    "include": ["src/**/*"]
 }

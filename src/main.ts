@@ -1,20 +1,21 @@
+import "reflect-metadata";
 import express = require("express");
-import { buildSchema } from "graphql";
+import { buildSchema } from "type-graphql";
 import { graphqlHTTP } from "express-graphql";
+import AuthorResolver = require("./controllers/AuthorResolver");
+import BookResolver = require("./controllers/BookResolver");
 
-// only two models, so I'm going to build it from string
-const schema = buildSchema(`
-    type Query {
-        hello: String
-    }
-`);
-
-const root = { hello: () => "Hello World!" };
-const app = express();
-app.use("/gpq", graphqlHTTP({
+async function app(): Promise<void> {
+  const schema = await buildSchema({
+    resolvers: [BookResolver, AuthorResolver],
+    emitSchemaFile: true
+  });
+  const server = express();
+  server.use("/gpq", graphqlHTTP({
     schema,
-    rootValue: root,
     graphiql: true
-}));
+  }));
+  server.listen(4000, () => console.log("Server listening on http://localhost:4000/gpq"));
+}
 
-app.listen(4000, () => console.log("localhost:4000/gpq"));
+app();
