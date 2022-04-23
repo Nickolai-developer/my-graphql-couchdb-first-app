@@ -3,12 +3,12 @@ import Author from "./Author";
 
 @ObjectType()
 export default class Book {
-@Field(() => ID)
+@Field(() => ID, { nullable: false })
   id: string;
 
-@Field()
+@Field({ nullable: false })
   name: string;
 
-@Field(() => [Author])
+@Field(() => [Author], { nullable: true })
   authors: Author[];
 }
