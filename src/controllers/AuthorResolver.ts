@@ -1,6 +1,6 @@
 import { Arg, Query, Resolver } from "type-graphql";
 import { AuthorData } from "../outerTypes";
-import Author = require("../schemas/Author");
+import Author from "../schemas/Author";
 
 @Resolver(() => Author)
 class AuthorResolver {

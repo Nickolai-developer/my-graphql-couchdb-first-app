@@ -1,6 +1,6 @@
 import { Arg, Query, Resolver } from "type-graphql";
 import { BookData } from "../outerTypes";
-import Book = require("../schemas/Book");
+import Book from "../schemas/Book";
 
 @Resolver(() => Book)
 class BookResolver {

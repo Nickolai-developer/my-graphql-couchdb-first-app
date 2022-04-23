@@ -1,16 +1,14 @@
 import { Field, ID, ObjectType } from "type-graphql";
-import Author = require("./Author");
+import Author from "./Author";
 
 @ObjectType()
-class Book {
+export default class Book {
 @Field(() => ID)
   id: string;
 
 @Field()
   name: string;
 
-// @Field(() => [Author])
-//   authors: Author[];
+@Field(() => [Author])
+  authors: Author[];
 }
-
-export = Book;
