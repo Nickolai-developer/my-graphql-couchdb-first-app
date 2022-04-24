@@ -8,5 +8,4 @@ export interface BookData {
 export interface AuthorData {
     id: string;
     name: string;
-    books?: BookData[];
 }

@@ -1,6 +1,6 @@
-import { Arg, Query, Resolver } from "type-graphql";
-import { authorById } from "../models/DatabaseService";
-import { AuthorData } from "../outerTypes";
+import { Arg, FieldResolver, Query, Resolver, Root } from "type-graphql";
+import { authorById, booksByAuthor } from "../models/DatabaseService";
+import { AuthorData, BookData } from "../outerTypes";
 import Author from "../schemas/Author";
 import { ListingInput, SearchInput } from "../schemas/UtilClasses";
 
@@ -19,6 +19,11 @@ class AuthorResolver {
   @Query(() => [Author], { nullable: true })
   searchAuthors(@Arg("searchInput", { nullable: false }) { type, searchString }: SearchInput): AuthorData[] {
     return [];
+  }
+
+  @FieldResolver()
+  books(@Root() { id }: AuthorData): BookData[] {
+    return booksByAuthor(id);
   }
 }
 

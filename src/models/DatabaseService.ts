@@ -14,7 +14,8 @@ export function authorById(id: string): AuthorData {
 }
 
 export function bookById(id: string): BookData {
-  return db.data.books.find(book => book.id === id);
+  const book = db.data.books.find(book => book.id === id) as BookData;
+  return book;
 }
 
 export function addBook({ title, authors }: NewBookInput): BookData {
@@ -38,4 +39,8 @@ export function addBook({ title, authors }: NewBookInput): BookData {
   }
   db.save();
   return book;
+}
+
+export function booksByAuthor(authorId: string): BookData[] {
+  return db.data.books.filter(book => book.authors.some(au => au.id === authorId));
 }
