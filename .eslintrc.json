@@ -31,6 +31,25 @@
         "semi": [
             "warn",
             "always"
-        ]
+        ],
+        "no-empty-function": ["off"],
+        "@typescript-eslint/no-empty-function": ["off"],
+        "no-multiple-empty-lines": ["warn"],
+        "object-curly-spacing": "off",
+        "@typescript-eslint/object-curly-spacing": ["warn", "always"],
+        "eqeqeq": ["warn", "always"],
+        "no-useless-return": "warn",
+        "no-useless-catch": "off",
+        "no-multi-spaces": "warn",
+        "space-before-blocks": ["warn", "always"],
+        "space-in-parens": "warn",
+        "space-infix-ops": "warn",
+        "space-unary-ops": "warn",
+        "no-mixed-spaces-and-tabs": "warn",
+        "no-trailing-spaces": "warn",
+        "no-irregular-whitespace": "warn",
+        "no-whitespace-before-property": "warn",
+        "spaced-comment": "warn",
+        "comma-dangle": "warn"
     }
 }

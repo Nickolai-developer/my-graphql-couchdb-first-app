@@ -1,10 +1,12 @@
 
 export interface BookData {
     id: string;
-    name: string;
+    title: string;
+    authors: AuthorData[];
 }
 
 export interface AuthorData {
     id: string;
     name: string;
+    books?: BookData[];
 }
