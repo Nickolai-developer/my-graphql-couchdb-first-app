@@ -5,3 +5,4 @@ dist/
 src/**/*.map.js
 schema.gql
 db.json
+couchdb-auth.json

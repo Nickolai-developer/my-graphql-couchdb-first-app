@@ -1,4 +1,8 @@
 {
+  "scripts": {
+    "build": "tsc",
+    "start": "node ./dist/main.js"
+  },
   "dependencies": {
     "class-validator": "0.13.2",
     "express": "4.17.3",
