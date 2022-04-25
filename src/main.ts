@@ -1,9 +1,12 @@
 import "reflect-metadata";
-import express = require("express");
+import express from "express";
 import { buildSchema } from "type-graphql";
 import { graphqlHTTP } from "express-graphql";
-import AuthorResolver = require("./controllers/AuthorResolver");
-import BookResolver = require("./controllers/BookResolver");
+import fetch from "node-fetch";
+import BookResolver from "./controllers/BookResolver.js";
+import AuthorResolver from "./controllers/AuthorResolver.js";
+
+console.log(fetch);
 
 async function app(): Promise<void> {
   const schema = await buildSchema({

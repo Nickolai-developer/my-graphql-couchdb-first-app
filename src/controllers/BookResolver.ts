@@ -1,11 +1,11 @@
 import { Arg, Mutation, Query, Resolver } from "type-graphql";
-import { addBook, bookById } from "../models/DatabaseService";
-import { BookData } from "../outerTypes";
-import Book, { NewBookInput } from "../schemas/Book";
-import { ListingInput, SearchInput } from "../schemas/UtilClasses";
+import { addBook, bookById } from "../models/DatabaseService.js";
+import { BookData } from "../outerTypes.js";
+import Book, { NewBookInput } from "../schemas/Book.js";
+import { ListingInput, SearchInput } from "../schemas/UtilClasses.js";
 
 @Resolver(() => Book)
-class BookResolver {
+export default class BookResolver {
   @Query(() => Book, { nullable: true })
   bookById(@Arg("id", { nullable: false }) id: string): BookData {
     return bookById(id);
@@ -27,5 +27,3 @@ class BookResolver {
     return [];
   }
 }
-
-export = BookResolver;

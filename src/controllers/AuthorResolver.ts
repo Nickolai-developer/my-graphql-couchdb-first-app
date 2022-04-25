@@ -1,11 +1,11 @@
 import { Arg, FieldResolver, Query, Resolver, Root } from "type-graphql";
-import { authorById, booksByAuthor } from "../models/DatabaseService";
-import { AuthorData, BookData } from "../outerTypes";
-import Author from "../schemas/Author";
-import { ListingInput, SearchInput } from "../schemas/UtilClasses";
+import { authorById, booksByAuthor } from "../models/DatabaseService.js";
+import { AuthorData, BookData } from "../outerTypes.js";
+import Author from "../schemas/Author.js";
+import { ListingInput, SearchInput } from "../schemas/UtilClasses.js";
 
 @Resolver(() => Author)
-class AuthorResolver {
+export default class AuthorResolver {
   @Query(() => Author, { nullable: true })
   authorById(@Arg("id", { nullable: false }) id: string): AuthorData | null {
     return authorById(id);
@@ -26,5 +26,3 @@ class AuthorResolver {
     return booksByAuthor(id);
   }
 }
-
-export = AuthorResolver;

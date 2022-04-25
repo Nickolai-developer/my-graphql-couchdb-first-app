@@ -1,7 +1,7 @@
 /**
  * This file will be removed after migration on CouchDB
  */
-import fs = require("fs");
+import fs from "fs";
 
 if (!fs.existsSync("./db.json")) {
   fs.writeFileSync("./db.json", "{}");
@@ -36,4 +36,4 @@ class FakeDatabase {
   }
 }
 
-export = new FakeDatabase();
+export default new FakeDatabase();

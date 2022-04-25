@@ -1,5 +1,5 @@
 import { Field, ID, ObjectType } from "type-graphql";
-import Book from "./Book";
+import Book from "./Book.js";
 
 @ObjectType()
 export default class Author {

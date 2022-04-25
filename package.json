@@ -1,4 +1,5 @@
 {
+  "type": "module",
   "scripts": {
     "build": "tsc",
     "start": "node ./dist/main.js"
@@ -8,6 +9,7 @@
     "express": "4.17.3",
     "express-graphql": "0.12.0",
     "graphql": "15.8.0",
+    "node-fetch": "^3.2.3",
     "reflect-metadata": "0.1.13",
     "type-graphql": "1.1.1"
   },

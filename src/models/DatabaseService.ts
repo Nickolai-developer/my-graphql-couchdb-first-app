@@ -1,7 +1,7 @@
-import { AuthorData, BookData } from "../outerTypes";
-import { NewBookInput } from "../schemas/Book";
-import db = require("./db");
-import newUniqueID from "./UIDService";
+import { AuthorData, BookData } from "../outerTypes.js";
+import { NewBookInput } from "../schemas/Book.js";
+import db from "./db.js";
+import newUniqueID from "./UIDService.js";
 
 
 export function authorById(id: string): AuthorData {
