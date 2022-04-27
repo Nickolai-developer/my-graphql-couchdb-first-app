@@ -2,10 +2,12 @@
   "type": "module",
   "scripts": {
     "build": "tsc",
+    "import": "node ./dist/importData.js",
     "start": "node ./dist/main.js"
   },
   "dependencies": {
     "class-validator": "0.13.2",
+    "csv-parser": "^3.0.0",
     "express": "4.17.3",
     "express-graphql": "0.12.0",
     "graphql": "15.8.0",

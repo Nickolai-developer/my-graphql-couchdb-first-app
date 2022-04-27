@@ -2,6 +2,7 @@ import { AuthorData, BookData } from "../outerTypes";
 import { NewBookInput } from "../schemas/Book.js";
 import newUniqueID from "./UIDService.js";
 import nano from "./NanoInitialize.js";
+import { ListingInput, SearchInput } from "../schemas/UtilClasses";
 
 type AuthorDocument = AuthorData & { _id: string, _rev:string };
 type BookDocument = BookData & { _id: string, _rev:string };
@@ -26,7 +27,6 @@ async function authorByName(name: string): Promise<AuthorDocument> {
   return response.docs[0];
 }
 
-
 export async function addBook({ title, authors }: NewBookInput): Promise<BookData> {
   const booksdb = (await nano).use("books");
   const authorsdb = (await nano).use("authors");
@@ -39,9 +39,9 @@ export async function addBook({ title, authors }: NewBookInput): Promise<BookDat
       { id: newUniqueID({ name: providedAuthorName }), name: providedAuthorName };
     book.authors.push(author);
     // create new author
-    !authorDocument && authorsdb.insert(author);
+    !authorDocument && await authorsdb.insert(author);
   }
-  booksdb.insert(book);
+  await booksdb.insert(book);
   return book;
 }
 
@@ -57,4 +57,20 @@ export async function booksByAuthor(authorId: string): Promise<BookData[]> {
     }
   });
   return response.docs;
+}
+
+export async function getBooks({ count, skip, sort }: ListingInput): Promise<BookData[]> {
+  return [];
+}
+
+export async function searchBooks({ count, skip, sort, searchString }: SearchInput): Promise<BookData[]> {
+  return [];
+}
+
+export async function getAuthors({ count, skip, sort }: ListingInput): Promise<AuthorData[]> {
+  return [];
+}
+
+export async function searchAuthors({ count, skip, sort, searchString }: SearchInput): Promise<AuthorData[]> {
+  return [];
 }

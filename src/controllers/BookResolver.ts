@@ -1,5 +1,5 @@
 import { Arg, Mutation, Query, Resolver } from "type-graphql";
-import { addBook, bookById } from "../models/DatabaseService.js";
+import { addBook, bookById, getBooks, searchBooks } from "../models/DatabaseService.js";
 import { BookData } from "../outerTypes";
 import Book, { NewBookInput } from "../schemas/Book.js";
 import { ListingInput, SearchInput } from "../schemas/UtilClasses.js";
@@ -13,17 +13,16 @@ export default class BookResolver {
 
   @Mutation(() => Book, { nullable: false })
   async addBook(@Arg("newBookInput", { nullable: false }) { title, authors }: NewBookInput): Promise<BookData> {
-    const bewBook = await addBook({ title, authors });
-    return bewBook;
+    return await addBook({ title, authors });
   }
 
   @Query(() => [Book], { nullable: false })
-  async getBooks(@Arg("listingInput", { nullable: false }) { count, skip }: ListingInput): Promise<BookData[]> {
-    return [];
+  async getBooks(@Arg("listingInput", { nullable: false }) listingInput: ListingInput): Promise<BookData[]> {
+    return await getBooks(listingInput);
   }
 
   @Query(() => [Book], { nullable: false })
-  async searchBooks(@Arg("searchInput", { nullable:false }) { type, searchString }: SearchInput): Promise<BookData[]> {
-    return [];
+  async searchBooks(@Arg("searchInput", { nullable:false }) searchInput: SearchInput): Promise<BookData[]> {
+    return await searchBooks(searchInput);
   }
 }

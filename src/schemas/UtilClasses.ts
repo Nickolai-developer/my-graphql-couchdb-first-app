@@ -7,10 +7,13 @@ export class ListingInput {
 
 @Field(() => Int, { nullable: true })
   skip: number;
+
+@Field(() => String, { nullable: true })
+  sort: "ascending" | "descending" | null;
 }
 
 @InputType()
-export class SearchInput {
+export class SearchInput extends ListingInput {
 @Field(() => String, { nullable:true })
   type?: "simple";
 

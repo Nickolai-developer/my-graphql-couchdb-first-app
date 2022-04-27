@@ -80,12 +80,83 @@ You will get initial list of databases:
 In case this returns an empty array for you, it means you haven't finished installation correctly. 
 
 ======
-### Explore
+### Initialize db
 
-Start app via `npm start` and browse http://localhost:4000/gpq
-
-You can: //TODO
+You need to import example data to database from csv file. To acquire this, just run script:
+```
+  npm run import
+```
+Example data stored in a file "data-example.csv" in root directory.
 
 ======
-### Tools, approaches, packages used
+### Explore
+
+Start app via `npm start` and browse http://<your_host>:4000/gpq. You will see GraphiQL panel.
+
+You can:
++ Add new books
+
+```
+  mutation {
+    addBook(newBookInput: {
+      title: "Sonnets",
+      authors: ["W. Shakespeare"]
+    })
+  }
+```
+
++ Select single books and authors by id
+
+```
+  {
+    bookById(id: "15aea5baaa12731bc76e3680ba687b9964b841cae829966bedf7383347c1a250_book") {
+      title
+    }
+  }
+```
+
++ Extract books or authors in lists (pagination and sort options are provided)
+
 // TODO
+
++ Search books or authors in lists. Pagination and sorting works too
+
+// TODO
+
++ Recursively select books, then authors of books, then books, written by these authors. Unlimited levels of nesting
+
+```
+  {
+  bookById(id:"15aea5baaa12731bc76e3680ba687b9964b841cae829966bedf7383347c1a250_book") {
+    id
+    title
+    authors {
+      id
+      name
+      books{
+        id
+        title
+      }
+    }
+  }
+}
+```
+
+======
+### Approaches used
+
+Code written in typescript according to es6 for LTS node.js v12.22. Information about packages used available in package.json.
+
+The project structure divided by single responsibility principle in some sort of MVC.
+
+We have a "schemas" which are represents how our data are available via api;
+
+A "models" layer, responsible to utilize database communication;
+
+And "controllers" - a thin layer, which only objective is to properly connect them both.
+
+======
+### Tools, packages
+
+For cleaner, less repeatable code was used type-graphql framework;
+For easier database communication was used apache/nano-couchdb interlayer;

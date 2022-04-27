@@ -1,5 +1,5 @@
 import { Arg, FieldResolver, Query, Resolver, Root } from "type-graphql";
-import { authorById, booksByAuthor } from "../models/DatabaseService.js";
+import { authorById, booksByAuthor, getAuthors, searchAuthors } from "../models/DatabaseService.js";
 import { AuthorData, BookData } from "../outerTypes";
 import Author from "../schemas/Author.js";
 import { ListingInput, SearchInput } from "../schemas/UtilClasses.js";
@@ -12,13 +12,13 @@ export default class AuthorResolver {
   }
 
   @Query(() => [Author], { nullable: false })
-  async getAuthors(@Arg("listingInput", { nullable:false }) { count, skip }: ListingInput): Promise<AuthorData[]> {
-    return [];
+  async getAuthors(@Arg("listingInput", { nullable:false }) listingInput: ListingInput): Promise<AuthorData[]> {
+    return await getAuthors(listingInput);
   }
 
   @Query(() => [Author], { nullable: true })
-  async searchAuthors(@Arg("searchInput", { nullable: false }) { type, searchString }: SearchInput): Promise<AuthorData[]> {
-    return [];
+  async searchAuthors(@Arg("searchInput", { nullable: false }) searchInput: SearchInput): Promise<AuthorData[]> {
+    return await searchAuthors(searchInput);
   }
 
   @FieldResolver()
