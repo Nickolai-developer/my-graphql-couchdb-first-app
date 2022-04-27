@@ -9,7 +9,7 @@
     "express": "4.17.3",
     "express-graphql": "0.12.0",
     "graphql": "15.8.0",
-    "node-fetch": "^3.2.3",
+    "nano": "10.0.0",
     "reflect-metadata": "0.1.13",
     "type-graphql": "1.1.1"
   },

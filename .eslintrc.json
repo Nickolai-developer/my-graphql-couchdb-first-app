@@ -50,6 +50,7 @@
         "no-irregular-whitespace": "warn",
         "no-whitespace-before-property": "warn",
         "spaced-comment": "warn",
-        "comma-dangle": "warn"
+        "comma-dangle": "warn",
+        "@typescript-eslint/adjacent-overload-signatures": "off"
     }
 }
