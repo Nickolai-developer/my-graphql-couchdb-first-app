@@ -1,4 +1,3 @@
-======
 ### How to
 Firstly, install required tools:
 
@@ -79,7 +78,7 @@ You will get initial list of databases:
 ```
 In case this returns an empty array for you, it means you haven't finished installation correctly. 
 
-======
+---
 ### Initialize db
 
 You need to import example data to database from csv file. To acquire this, just run script:
@@ -88,7 +87,7 @@ You need to import example data to database from csv file. To acquire this, just
 ```
 Example data stored in a file "data-example.csv" in root directory.
 
-======
+---
 ### Explore
 
 Start app via `npm start` and browse http://<your_host>:4000/gpq. You will see GraphiQL panel.
@@ -116,12 +115,37 @@ You can:
 ```
 
 + Extract books or authors in lists (pagination and sort options are provided)
-
-// TODO
+```
+  {
+    getBooks(listingInput: {
+      count: 40
+      skip: 20
+      sort: "descending"
+    }) {
+      title
+      authors {
+        name
+      }
+    }
+  }
+```
 
 + Search books or authors in lists. Pagination and sorting works too
-
-// TODO
+```
+{
+  searchBooks(searchInput: {
+    searchString: "The"
+    count: 10
+    skip: 1
+    sort:"descending"
+  }) {
+    title
+    authors {
+      name
+    }
+  }
+}
+```
 
 + Recursively select books, then authors of books, then books, written by these authors. Unlimited levels of nesting
 
@@ -139,7 +163,7 @@ You can:
 }
 ```
 
-======
+---
 ### Approaches used
 
 Code written in typescript according to es6 for LTS node.js v12.22. Information about packages used available in package.json.
@@ -152,8 +176,9 @@ A "models" layer, responsible to utilize database communication;
 
 And "controllers" - a thin layer, which only objective is to properly connect them both.
 
-======
+---
 ### Tools, packages
 
 For cleaner, less repeatable code was used type-graphql framework;
+
 For easier database communication was used apache/nano-couchdb interlayer;

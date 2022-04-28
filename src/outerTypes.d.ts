@@ -5,8 +5,6 @@
  * I decided to store id and name in author info (preserve name for search purposes maybe).
  * Another db - "authors";
  * Contains only author id and name
- *
- * //TODO: If I want to add index
  */
 
 /** */
