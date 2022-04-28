@@ -12,7 +12,7 @@ Clone repo by
   git clone https://github.com/Nickolai-dev/my-graphql-couchdb-first-app.git graphql-app
 ```
 
-To compile app:
+And compile app:
 
 ```
   cd ./graphql-app
@@ -22,14 +22,14 @@ To compile app:
 
 ### Instaling CouchDB:
 
-Firstly install required tools:
+Install required tools:
 
 ```
   sudo apt update
   sudo apt install -y curl apt-transport-https gnupg
 ```
 
-Sign CouchDB's repository:
+Sign CouchDB's repository pubkeys:
 
 ```
   curl https://couchdb.apache.org/repo/keys.asc | gpg --dearmor | sudo tee /usr/share/keyrings/couchdb-archive-keyring.gpg >/dev/null 2>&1
@@ -38,7 +38,7 @@ Sign CouchDB's repository:
   sudo apt update
 ```
 
-Install it:
+Install CouchDB:
 
 ```
   sudo apt install -y couchdb
@@ -85,7 +85,7 @@ You need to import example data to database from csv file. To acquire this, just
 ```
   npm run import
 ```
-Example data stored in a file "data-example.csv" in root directory.
+Example data stored in a file "data-example.csv" in a root directory.
 
 ---
 ### Explore
