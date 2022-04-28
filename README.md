@@ -81,6 +81,7 @@ In case this returns an empty array for you, it means you haven't finished insta
 ---
 ### Initialize db
 
+Project comes with example books stored in csv file.
 You need to import example data to database from csv file. To acquire this, just run script:
 ```
   npm run import
