@@ -62,7 +62,7 @@ export async function booksByAuthor(authorId: string): Promise<BookData[]> {
 export async function getBooks({ count, skip, sort }: ListingInput): Promise<BookData[]> {
   const books = (await nano).use("books");
   const response = await books.list({ skip, limit: count, include_docs: true, descending: sort === "descending" });
-  return response.rows.map(row => {
+  return response.rows.filter(row => !!(row.doc && row.doc.id)).map(row => { // sometimes it has design docs omg; filter will help
     const { id, title, authors } = (row.doc as BookData);
     return { id, title, authors };
   });
@@ -86,7 +86,7 @@ export async function searchBooks({ count, skip, sort, searchString }: SearchInp
 export async function getAuthors({ count, skip, sort }: ListingInput): Promise<AuthorData[]> {
   const authors = (await nano).use("authors");
   const response = await authors.list({ skip, limit: count, include_docs: true, descending: sort === "descending" });
-  return response.rows.map(row => {
+  return response.rows.filter(row => !!(row.doc && row.doc.id)).map(row => {
     const { id, name } = (row.doc as AuthorData);
     return { id, name };
   });
