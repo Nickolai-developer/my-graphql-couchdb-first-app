@@ -60,17 +60,49 @@ export async function booksByAuthor(authorId: string): Promise<BookData[]> {
 }
 
 export async function getBooks({ count, skip, sort }: ListingInput): Promise<BookData[]> {
-  return [];
+  const books = (await nano).use("books");
+  const response = await books.list({ skip, limit: count, include_docs: true, descending: sort === "descending" });
+  return response.rows.map(row => {
+    const { id, title, authors } = (row.doc as BookData);
+    return { id, title, authors };
+  });
 }
 
 export async function searchBooks({ count, skip, sort, searchString }: SearchInput): Promise<BookData[]> {
-  return [];
+  const books = (await nano).use("books");
+  const response = await books.find({
+    selector: {
+      title: {
+        "$regex": `(?i)${searchString}`
+      }
+    },
+    limit: count,
+    skip,
+    sort: [{ title: sort === "descending" ? "desc" : "asc" }]
+  });
+  return response.docs;
 }
 
 export async function getAuthors({ count, skip, sort }: ListingInput): Promise<AuthorData[]> {
-  return [];
+  const authors = (await nano).use("authors");
+  const response = await authors.list({ skip, limit: count, include_docs: true, descending: sort === "descending" });
+  return response.rows.map(row => {
+    const { id, name } = (row.doc as AuthorData);
+    return { id, name };
+  });
 }
 
 export async function searchAuthors({ count, skip, sort, searchString }: SearchInput): Promise<AuthorData[]> {
-  return [];
+  const authors = (await nano).use("authors");
+  const response = await authors.find({
+    selector: {
+      name: {
+        "$regex": `(?i)${searchString}`
+      }
+    },
+    limit: count,
+    skip,
+    sort: [{ name: sort === "descending" ? "desc" : "asc" }]
+  });
+  return response.docs;
 }

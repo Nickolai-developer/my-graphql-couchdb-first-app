@@ -128,13 +128,10 @@ You can:
 ```
   {
   bookById(id:"15aea5baaa12731bc76e3680ba687b9964b841cae829966bedf7383347c1a250_book") {
-    id
     title
     authors {
-      id
       name
       books{
-        id
         title
       }
     }

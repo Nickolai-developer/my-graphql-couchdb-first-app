@@ -32,6 +32,29 @@ async function initializeNano(): Promise<ServerScopeEx> {
       }
     }
   }
+  // creating indexes
+  const books = (await scope).use("books");
+  const authors = (await scope).use("authors");
+  const booksIndexes = [{
+    name: "sortByTitle",
+    index: { fields: ["title"] }
+  }, {
+    name: "indexForIds",
+    index: { fields: ["id"] }
+  }];
+  const authorsIndexes = [{
+    name: "sortByName",
+    index: { fields: ["name"] }
+  }, {
+    name: "indexForIds",
+    index: { fields: ["id"] }
+  }];
+  for (const { name, index } of booksIndexes) {
+    await books.createIndex({ name, index });
+  }
+  for (const { name, index } of authorsIndexes) {
+    await authors.createIndex({ name, index });
+  }
   return scope;
 }
 

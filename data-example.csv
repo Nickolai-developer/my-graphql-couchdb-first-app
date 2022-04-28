@@ -1,11 +1,77 @@
 book;authors
-Война и мир;Александр Толстой
+Война и мир;Лев Толстой
+Анна Каренина;Лев Толстой
+Детство;Лев Толстой
+Отрочество;Лев Толстой
+Юность;Лев Толстой
+Кавказский пленник;Лев Толстой
+Хаджи-Мурат;Лев Толстой
 Человек-амфибия;А. Р. Беляев
 Продавец воздуха;А. Р. Беляев
 Ариэль;А. Р. Беляев
 Голова профессора Доуэля;А. Р. Беляев
+Человек, потерявший лицо;А. Р. Беляев
+Человек, нашедший своё лицо;А. Р. Беляев
+Прыжок в ничто;А. Р. Беляев
+Остров погибших кораблей;А. Р. Беляев
 Двенадцать стульев;И. Ильф,Е. Петров
 Золотой теленок;И. Ильф,Е. Петров
+Жизнь и необычайные приключения солдата Ивана Чонкина;Владимир Войнович
+Гиперболоид инженера Гарина;Алексей Толстой
+Аэлита;Алексей Толстой
+Хождение по мукам;Алексей Толстой
+Петр Первый;Алексей Толстой
+Собрание сочинений. Том 1-4;А. С. Пушкин
+Собрание сочинений. Том 4-8;А. С. Пушкин
+Евгений Онегин;А. С. Пушкин
+Мертвые души;Н. Гоголь
+Ревизор;Н. Гоголь
+Мастер и Маргарита;М. Булгаков
+Собачье Сердце;М. Булгаков
+Записки юного врача;М. Булгаков
+Бег;М. Булгаков
+Белая гвардия;М. Булгаков
+Преступление и наказание;Ф. Достоевский
+Идиот;Ф. Достоевский
+Горе от ума;А. Грибоедов
+Палата номер шесть;А. Чехов
+Рассказы;А. Чехов
+Драма на охоте;А. Чехов
+Вишневый сад;А. Чехов
+Дядя Ваня;А. Чехов
+Солярис;Станислав Лем
+Голем 16;Станислав Лем
+Алые паруса;Александр Грин
+Пикник на обочине;Аркадий и Борис Стругацкие
+Трудно быть богом;Аркадий и Борис Стругацкие
+Герой нашего времени;М. Лермонтов
+Мцыри;М. Лермонтов
+Демон;М. Лермонтов
+Стихтворения;М. Лермонтов
+Песнь про царя Ивана Васильевича, молодого опричника и удалого купца Калашникова;М. Лермонтов
+Тихий Дон;М. Шолохов
+Судьба человека;М. Шолохов
+Фауст;Иоганн Вольфганг фон Гёте
+20,000 leagues under water;Jules Verne
+The Adventures of Tom Sawyer;Mark Twain
+The Adventures of Huckleberry Finn;Mark Twain
+The Private History of a Campaign That Failed;Mark Twain
+Fahrenheit 451;Ray Bradbury
+Green Shadows, White Whale;Ray Bradbury
+The Pedestrian;Ray Bradbury
+The Illustrated Man;Ray Bradbury
+The Veldt;Ray Bradbury
+Kaleidoscope;Ray Bradbury
+Dark They Were, and Golden-Eyed;Ray Bradbury
+Burmese Days;George Orwell
+A Clergyman's Daughter;George Orwell
+Keep the Aspidistra Flying;George Orwell
+Coming Up for Air;George Orwell
+Animal Farm;George Orwell
+Nineteen Eighty-Four;George Orwell
+Down and Out in Paris and London;George Orwell
+The Road to Wigan Pier;George Orwell
+Homage to Catalonia;George Orwell
 Reach for the Skies: Ballooning, Birdmen and Blasting into Space;Richard Branson
 Screw It, Let's Do It;Richard Branson
 Losing My Virginity: How I've Survived, Had Fun, and Made a Fortune Doing Business My Way;Richard Branson
@@ -13,7 +79,9 @@ Arctic Diary: Surviving on Thin Ice;Richard Branson
 The Classical Theory of Fields;Lev Landau,Evgeny Lifshitz
 Electrodynamics of Continuous Media;Lev Landau,Evgeny Lifshitz
 Mechanics. Vol. 1;Lev Landau,Evgeny Lifshitz
+What is Relativity?;Lev Landau,G. B. Rumer
 Fluid Mechanics. Vol. 6;Lev Landau,Evgeny Lifshitz
+Theory of Elasticity. Vol. 7;Lev Landau,Evgeny Lifshitz
 Quantum Electrodynamics. Vol. 4;V. B. Berestetskii,Evgeny Lifshitz,L. P. Pitaevskii
 Physical Kinetics. Vol. 10;Evgeny Lifshitz,L. P. Pitaevskii
 Statistical Physics, Part 2. Vol. 9;Evgeny Lifshitz,L. P. Pitaevskii
@@ -30,3 +98,4 @@ Magnetic Fields in Astrophysics;Ya. B. Zel'dovich,A. A. Ruzmaikin,D. D. Sokoloff
 Relativistic Astrophysics: The Structure and Evolution of the Universe Vol. 2;Ya. B. Zel'dovich,I. D. Novikov
 Physics of Shock Waves and High-Temperature Hydrodynamic Phenomena;Ya. B. Zel'dovich,Yu. P. Raizer
 Dynamo Problems in Astrophysics;Ya. B. Zel'dovich,A. A. Ruzmaikin
+Bose-Einstein Condensation and Superfluidity;L. P. Pitaevskii,S. Stringari
